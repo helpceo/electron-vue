@@ -1,5 +1,6 @@
 {
   "comments": false,
+  "presets": [["es2015", { "modules": false }]],
   "env": {
     "test": {
       "presets": [
@@ -35,5 +36,14 @@
       ]
     }
   },
-  "plugins": ["transform-runtime"]
+  "plugins": [
+    "transform-runtime",
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
 }
