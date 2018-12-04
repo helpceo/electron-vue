@@ -63,6 +63,10 @@ let rendererConfig = {
         use: 'vue-html-loader'
       },
       {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader'
+      },
+      {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
