@@ -8,6 +8,12 @@
 <script>
   export default {
     name: 'landing-page',
+    data: {
+
+    },
+    methods: {
+  
+    },
   };
 </script>
 <style scoped lang="scss" src="./index.scss"></style>
