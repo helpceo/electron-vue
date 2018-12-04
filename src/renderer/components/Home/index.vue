@@ -13,7 +13,7 @@
     },
     methods: {
   
-    }
-  }
+    },
+  };
 </script>
 <style scoped lang="scss" src="./index.scss"></style>
