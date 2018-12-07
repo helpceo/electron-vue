@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import { createPersistedState, createSharedMutations } from 'vuex-electron';
+import plugins from './plugins';
 
 import modules from './modules';
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState(),
     createSharedMutations(),
+    plugins,
   ],
   strict: process.env.NODE_ENV !== 'production',
 });
