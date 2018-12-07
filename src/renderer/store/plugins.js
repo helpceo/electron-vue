@@ -1,6 +1,7 @@
 import createLogger from 'vuex/dist/logger';
+import { createPersistedState, createSharedMutations } from 'vuex-electron';
 
-const dev = createLogger({
+const devLogger = createLogger({
   collapsed: false, // 自动展开记录的 mutation
   filter(mutation) {
     // 若 mutation 需要被记录，就让它返回 true 即可
@@ -19,5 +20,14 @@ const dev = createLogger({
   },
   logger: console, // 自定义 console 实现，默认为 `console`
 });
-const plugin = dev;
-export default plugin;
+const dev = [
+  createPersistedState(),
+  createSharedMutations(),
+  devLogger,
+];
+const pro = [
+  createPersistedState(),
+  createSharedMutations(),
+];
+const plugins = process.env.NODE_ENV === 'production' ? pro : dev;
+export default plugins;
