@@ -67,9 +67,15 @@
       "icon": "build/icons/icon.ico"
     },
     "linux": {
-      "icon": "build/icons"
+      "icon": "build/icons",
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "category": "Development"
     }
   },
+  "homepage": "http://www.roboware.me/#/home",
   "dependencies": {
     "axios": "^0.18.0",
     "electron-updater": "^4.0.5",

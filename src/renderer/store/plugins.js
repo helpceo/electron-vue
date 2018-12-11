@@ -20,14 +20,10 @@ const devLogger = createLogger({
   },
   logger: console, // 自定义 console 实现，默认为 `console`
 });
-const dev = [
+const plugins = [
   createPersistedState(),
   createSharedMutations(),
   devLogger,
 ];
-const pro = [
-  createPersistedState(),
-  createSharedMutations(),
-];
-const plugins = process.env.NODE_ENV === 'production' ? pro : dev;
+
 export default plugins;

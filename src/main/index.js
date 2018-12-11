@@ -22,7 +22,8 @@ function createWindow() {
     useContentSize: true,
     width: 1000,
   });
-
+  // 生产环境下开启开发者工具
+  mainWindow.webContents.openDevTools();
   mainWindow.loadURL(winURL);
 
   mainWindow.on('closed', () => {
